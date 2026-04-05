@@ -5,3 +5,6 @@ topics:
   order:
     pending: prod-order-pending # 주문 대기(주문 -> 허브 방향으로 1차 이벤트 발송, 공급업체 재고 차감용)
     accepted: prod-order-accepted # 주문 승인(주문 -> 배송 방향으로 이벤트 발송)
+
+  hub:
+    stock-updated: prod-hub-stock-updated # 허브 재고 변경
