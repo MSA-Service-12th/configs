@@ -3,12 +3,12 @@ topics:
     updated: prod-item-updated # 아이템 정보 수정 -> 허브 이벤트 발송
 
   order:
-    created: prod-order-created # 주문 생성 -> 배송 이벤트 발송
-    pending: prod-order-pending # 주문 대기(주문 -> 허브 방향으로 1차 이벤트 발송, 공급업체 재고 차감용)
+    pending: prod-order-pending # 주문 생성 및 대기(주문 -> 허브 방향으로 1차 이벤트 발송, 공급업체 재고 차감용)
     accepted: prod-order-accepted # 주문 승인(주문 -> 배송 방향으로 이벤트 발송)
 
   hub:
     stock-updated: prod-hub-stock-updated # 허브 재고 변경
 
   delivery:
-    created: prod-delivery-created # 배송 생성 -> 메시지 이벤트 발송
+    created: prod-delivery-created # 배송 생성(배송 -> 주문 방향 이벤트 발송)
+    status-updated: prod-delivery-status-updated # 배송 상태 변경(배송완료/배송취소 시 배송->주문 방향 이벤트 발송)
